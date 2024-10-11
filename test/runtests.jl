@@ -1,5 +1,5 @@
 using Pkg: Pkg
-using PKGNAME
+using StochasticMapFilters
 using Test
 using TestReports
 using Aqua
@@ -7,29 +7,22 @@ using Documenter
 
 ts = @testset ReportingTestSet "" begin
     @testset "Code quality (Aqua.jl)" begin
-        Aqua.test_all(PKGNAME; ambiguities=false)
-        Aqua.test_ambiguities(PKGNAME)
+        Aqua.test_all(StochasticMapFilters; ambiguities=false)
+        Aqua.test_ambiguities(StochasticMapFilters)
     end
 
     include("test_pkg_stuff.jl")
 
     # Set metadata for doctests.
-    DocMeta.setdocmeta!(PKGNAME, :DocTestSetup, :(using PKGNAME, Test); recursive=true)
-    if PKGNAME.HAS_NATIVE_EXTENSIONS
-        using Random
-        DocMeta.setdocmeta!(
-            PKGNAME.get_extension(PKGNAME, :RandomExt),
-            :DocTestSetup,
-            :(using PKGNAME, Test);
-            recursive=true,
-        )
-    end
+    DocMeta.setdocmeta!(
+        StochasticMapFilters,
+        :DocTestSetup,
+        :(using StochasticMapFilters, Test);
+        recursive=true,
+    )
 
     # Run doctests.
-    doctest(PKGNAME; manual=true)
-    if PKGNAME.HAS_NATIVE_EXTENSIONS
-        doctest(PKGNAME.get_extension(PKGNAME, :RandomExt); manual=true)
-    end
+    doctest(StochasticMapFilters; manual=true)
 
     # Run examples.
     examples_dir = joinpath(@__DIR__, "..", "examples")

@@ -1,7 +1,6 @@
 using Pkg: Pkg
-using PKGNAME
+using StochasticMapFilters
 using Documenter
-using Random # Loads PKGNAME Random extension.
 
 using Literate
 
@@ -89,30 +88,23 @@ for (ex, pth) in examples
 end
 
 # Set metadata for doctests.
-DocMeta.setdocmeta!(PKGNAME, :DocTestSetup, :(using PKGNAME, Test); recursive=true)
-if PKGNAME.HAS_NATIVE_EXTENSIONS
-    using Random
-    DocMeta.setdocmeta!(
-        PKGNAME.get_extension(PKGNAME, :RandomExt),
-        :DocTestSetup,
-        :(using PKGNAME, Test);
-        recursive=true,
-    )
-end
+DocMeta.setdocmeta!(
+    StochasticMapFilters, :DocTestSetup, :(using StochasticMapFilters, Test); recursive=true
+)
 makedocs(;
-    modules=[PKGNAME, PKGNAME.get_extension(PKGNAME, :RandomExt)],
+    modules=[StochasticMapFilters],
     authors="Grant Bruer gbruer15@gmail.com and contributors",
-    sitename="PKGNAME.jl",
+    sitename="StochasticMapFilters.jl",
     source=DOC_STAGE,
     build=DOC_BUILD,
     format=Documenter.HTML(;
-        repolink="https://github.com/gbruer15/PKGNAME.jl",
-        canonical="https://gbruer15.github.io/PKGNAME.jl",
+        repolink="https://github.com/tmp398243/tmp998454",
+        canonical="https://tmp398243.github.io/tmp998454",
         edit_link="main",
         assets=String[],
         size_threshold=2 * 2^20,
     ),
-    repo="github.com/gbruer15/PKGNAME.jl",
+    repo="github.com/tmp398243/tmp998454",
     pages=[
         "Home" => "index.md",
         "Examples" => examples_markdown,

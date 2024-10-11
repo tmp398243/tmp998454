@@ -1,27 +1,16 @@
 ```@meta
-CurrentModule = PKGNAME
+CurrentModule = StochasticMapFilters
 ```
 
-# PKGNAME
+# StochasticMapFilters
 
-Documentation for [PKGNAME](https://github.com/gbruer15/PKGNAME.jl).
+Documentation for [StochasticMapFilters](https://github.com/tmp398243/tmp998454).
 
 
 ```@index
-Modules = [PKGNAME]
+Modules = [StochasticMapFilters]
 ```
 
 ```@autodocs
-Modules = [PKGNAME]
-```
-
-
-# Extensions
-
-```@index
-Modules = [PKGNAME.get_extension(PKGNAME, :RandomExt)]
-```
-
-```@autodocs
-Modules = [PKGNAME.get_extension(PKGNAME, :RandomExt)]
+Modules = [StochasticMapFilters]
 ```
